@@ -1,0 +1,45 @@
+#uno{
+    position: absolute;
+    left: 15%;
+    bottom: 0%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+#dos{
+    position: absolute;
+    left: 50%;
+    bottom: 0%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+#tres{
+    position: absolute;
+    left: 85%;
+    bottom: 0%;
+    z-index: 1;
+    transform: translateX(-50%);
+}
+
+#boton {
+    position: absolute;
+    left: 75%;
+    bottom: 75%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+#logo {
+    position: absolute;
+    bottom: 83%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+
+.a-enter-vr-button {
+    display: none !important;
+  }
+  

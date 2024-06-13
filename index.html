@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.2/dist/mindar-image-aframe.prod.js"></script>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+
+<img src="imagenes/1.png" alt="uno" id="uno" height="15%" style="display: block;">
+<img src="imagenes/2.png" alt="dos" id="dos" height="15%" style="display: block;">
+<img src="imagenes/3.png" alt="tres" id="tres" height="15%" style="display: block;">
+<img src="imagenes/btn1.png" alt="boton" id="boton" height="6%"  style="display: block;">
+<img src="imagenes/logo.png" alt="logo" id="logo" height="25%" style="display: block;">
+
+    <a-scene
+      mindar-image="imageTargetSrc: ./imagenes/targets.mind; continuous: true  uiError:yes; uiLoading:yes; uiScanning:yes"
+      color-space="sRGB"
+      renderer="colorManagement: true, physicallyCorrectLights"
+      vr-mode-ui="enabled: false"
+      device-orientation-permission-ui="enabled: false"
+    >
+      <a-camera
+        position="0 0 0"
+        look-controls="enabled: false"
+        cursor="fuse: false; rayOrigin: mouse;"
+        raycaster="far: 1000000000; objects: .clickable"
+      >
+    </a-camera>
+
+    <a-light type="ambient" color="#ffffff" intensity="1"></a-light>
+    <!-- Luz direccional para sombras y efectos de luz más realistas -->
+    <a-light type="directional" color="#ffffff" intensity="50" position="1 1 1"></a-light>
+    <a-light type="directional" color="#ffffff" intensity="50" position="-1 -1 -1"></a-light>
+    <a-light type="directional" color="#ffffff" intensity="50" position="0 0 5"></a-light>
+
+      <a-entity id="example-target" mindar-image-target="targetIndex: 0">
+        <a-gltf-model
+          class="clickable"
+          id="llave1"
+          rotation="0 -60 0"
+          position="0 .5 0"
+          scale=".15 .15 .15"
+          src="imagenes/1.glb"
+          visible="true"
+          gesture-handler
+        ></a-gltf-model>
+        <a-gltf-model
+        class="clickable"
+        id="llave2"
+        rotation="0 -60 0"
+        position="0 .5 0"
+        scale=".15 .15 .15"
+        src="imagenes/2.glb"
+        visible="false"
+        gesture-handler
+      ></a-gltf-model>   <a-gltf-model
+      class="clickable"
+      id="llave3"
+      rotation="0 -60 0"
+      position="0 .5 0"
+      scale=".15 .15 .15"
+      src="imagenes/3.glb"
+      visible="false"
+      gesture-handler
+    ></a-gltf-model>
+     
+
+
+      </a-entity>
+    </a-scene>
+    <script src="gesto.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
